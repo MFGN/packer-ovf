@@ -1,0 +1,209 @@
+{
+  "variables": {
+    "version": ""
+  },
+  "builders": [
+    {
+      "name": "precise32",
+      "vm_name": "precise32",
+      "vmdk_name": "precise32-disk0",
+      "type": "vmware-iso",
+      "headless": true,
+      "disk_size": 16384,
+      "guest_os_type": "ubuntu",
+      "iso_url": "http://old-releases.ubuntu.com/releases/12.04.1/ubuntu-12.04.4-server-i386.iso",
+      "iso_checksum": "3bae12e315c89d42d7bf571e4e35efce585c7624",
+      "iso_checksum_type": "sha1",
+      "ssh_username": "vagrant",
+      "ssh_password": "vagrant",
+      "ssh_wait_timeout": "60m",
+      "shutdown_command": "echo 'vagrant' | sudo -S shutdown -P now",
+      "http_directory": ".",
+      "tools_upload_flavor": "linux",
+      "boot_command": [
+        "<esc><esc><enter><wait>",
+        "/install/vmlinuz noapic ",
+        "preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/scripts/ubuntu-preseed.cfg ",
+        "debian-installer=en_US auto locale=en_US kbd-chooser/method=us ",
+        "hostname=precise32 ",
+        "fb=false debconf/frontend=noninteractive ",
+        "keyboard-configuration/modelcode=SKIP keyboard-configuration/layout=GB ",
+        "keyboard-configuration/variant=GB console-setup/ask_detect=false ",
+        "initrd=/install/initrd.gz -- <enter>"
+      ]
+    },
+    {
+      "name": "precise64",
+      "vm_name": "precise64",
+      "vmdk_name": "precise64-disk0",
+      "type": "vmware-iso",
+      "headless": true,
+      "disk_size": 16384,
+      "guest_os_type": "ubuntu-64",
+      "iso_url": "http://old-releases.ubuntu.com/releases/12.04.1/ubuntu-12.04.4-server-amd64.iso",
+      "iso_checksum": "b802bb065df98c0530d782eb94778c2da19e10d6",
+      "iso_checksum_type": "sha1",
+      "ssh_username": "vagrant",
+      "ssh_password": "vagrant",
+      "ssh_wait_timeout": "60m",
+      "shutdown_command": "echo 'vagrant' | sudo -S shutdown -P now",
+      "http_directory": ".",
+      "tools_upload_flavor": "linux",
+      "boot_command": [
+        "<esc><esc><enter><wait>",
+        "/install/vmlinuz noapic ",
+        "preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/scripts/ubuntu-preseed.cfg ",
+        "debian-installer=en_US auto locale=en_US kbd-chooser/method=us ",
+        "hostname=precise64 ",
+        "fb=false debconf/frontend=noninteractive ",
+        "keyboard-configuration/modelcode=SKIP keyboard-configuration/layout=GB ",
+        "keyboard-configuration/variant=GB console-setup/ask_detect=false ",
+        "initrd=/install/initrd.gz -- <enter>"
+      ]
+    },
+    {
+      "name": "saucy32",
+      "vm_name": "saucy32",
+      "vmdk_name": "saucy32-disk0",
+      "type": "vmware-iso",
+      "headless": true,
+      "disk_size": 16384,
+      "guest_os_type": "ubuntu",
+      "iso_url": "http://old-releases.ubuntu.com/releases/saucy/ubuntu-13.10-server-i386.iso",
+      "iso_checksum": "77043904185d7efa0966b1c2c153805b",
+      "iso_checksum_type": "md5",
+      "ssh_username": "vagrant",
+      "ssh_password": "vagrant",
+      "ssh_wait_timeout": "60m",
+      "shutdown_command": "echo 'vagrant' | sudo -S shutdown -P now",
+      "http_directory": ".",
+      "tools_upload_flavor": "linux",
+      "boot_command": [
+        "<esc><esc><enter><wait>",
+        "/install/vmlinuz noapic ",
+        "preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/scripts/ubuntu-preseed.cfg ",
+        "debian-installer=en_US auto locale=en_US kbd-chooser/method=us ",
+        "hostname=saucy32 ",
+        "fb=false debconf/frontend=noninteractive ",
+        "keyboard-configuration/modelcode=SKIP keyboard-configuration/layout=GB ",
+        "keyboard-configuration/variant=GB console-setup/ask_detect=false ",
+        "initrd=/install/initrd.gz -- <enter>"
+      ]
+    },
+    {
+      "name": "saucy64",
+      "vm_name": "saucy64",
+      "vmdk_name": "saucy64-disk0",
+      "type": "vmware-iso",
+      "headless": true,
+      "disk_size": 16384,
+      "guest_os_type": "ubuntu-64",
+      "iso_url": "http://old-releases.ubuntu.com/releases/saucy/ubuntu-13.10-server-amd64.iso",
+      "iso_checksum": "4d1a8b720cdd14b76ed9410c63a00d0e",
+      "iso_checksum_type": "md5",
+      "ssh_username": "vagrant",
+      "ssh_password": "vagrant",
+      "ssh_wait_timeout": "60m",
+      "shutdown_command": "echo 'vagrant' | sudo -S shutdown -P now",
+      "http_directory": ".",
+      "tools_upload_flavor": "linux",
+      "boot_command": [
+        "<esc><esc><enter><wait>",
+        "/install/vmlinuz noapic ",
+        "preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/scripts/ubuntu-preseed.cfg ",
+        "debian-installer=en_US auto locale=en_US kbd-chooser/method=us ",
+        "hostname=saucy64 ",
+        "fb=false debconf/frontend=noninteractive ",
+        "keyboard-configuration/modelcode=SKIP keyboard-configuration/layout=GB ",
+        "keyboard-configuration/variant=GB console-setup/ask_detect=false ",
+        "initrd=/install/initrd.gz -- <enter>"
+      ]
+    },
+    {
+      "name": "trusty32",
+      "vm_name": "trusty32",
+      "vmdk_name": "trusty32-disk0",
+      "type": "vmware-iso",
+      "headless": true,
+      "disk_size": 16384,
+      "guest_os_type": "ubuntu",
+      "iso_url": "http://old-releases.ubuntu.com/releases/trusty/ubuntu-14.04.1-server-i386.iso",
+      "iso_checksum": "22c6764a4b9335d7b384a081e0fed104236c99d9",
+      "iso_checksum_type": "sha1",
+      "ssh_username": "vagrant",
+      "ssh_password": "vagrant",
+      "ssh_wait_timeout": "60m",
+      "shutdown_command": "echo 'vagrant' | sudo -S shutdown -P now",
+      "http_directory": ".",
+      "tools_upload_flavor": "linux",
+      "boot_command": [
+        "<esc><esc><enter><wait>",
+        "/install/vmlinuz noapic ",
+        "preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/scripts/ubuntu-preseed.cfg ",
+        "debian-installer=en_US auto locale=en_US kbd-chooser/method=us ",
+        "hostname=trusty32 ",
+        "fb=false debconf/frontend=noninteractive ",
+        "keyboard-configuration/modelcode=SKIP keyboard-configuration/layout=GB ",
+        "keyboard-configuration/variant=GB console-setup/ask_detect=false ",
+        "initrd=/install/initrd.gz -- <enter>"
+      ]
+    },
+    {
+      "name": "trusty64",
+      "vm_name": "trusty64",
+      "vmdk_name": "trusty64-disk0",
+      "type": "vmware-iso",
+      "headless": true,
+      "disk_size": 16384,
+      "guest_os_type": "ubuntu-64",
+      "iso_url": "http://old-releases.ubuntu.com/releases/trusty/ubuntu-14.04.1-server-amd64.iso",
+      "iso_checksum": "401c5f6666fe2879ac3a9a3247b487723410cf88",
+      "iso_checksum_type": "sha1",
+      "ssh_username": "vagrant",
+      "ssh_password": "vagrant",
+      "ssh_wait_timeout": "60m",
+      "shutdown_command": "echo 'vagrant' | sudo -S shutdown -P now",
+      "http_directory": ".",
+      "tools_upload_flavor": "linux",
+      "boot_command": [
+        "<esc><esc><enter><wait>",
+        "/install/vmlinuz noapic ",
+        "preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/scripts/ubuntu-preseed.cfg ",
+        "debian-installer=en_US auto locale=en_US kbd-chooser/method=us ",
+        "hostname=trusty64 ",
+        "fb=false debconf/frontend=noninteractive ",
+        "keyboard-configuration/modelcode=SKIP keyboard-configuration/layout=GB ",
+        "keyboard-configuration/variant=GB console-setup/ask_detect=false ",
+        "initrd=/install/initrd.gz -- <enter>"
+      ]
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "execute_command": "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'",
+      "script": "scripts/ubuntu-vmware-tools_install.sh"
+    },
+    {
+      "type": "shell",
+      "execute_command": "echo 'vagrant' | {{ .Vars }} sudo -E -S sh '{{ .Path }}'",
+      "script": "scripts/ubuntu-puppet_install.sh"
+    },
+    {
+      "type": "puppet-masterless",
+      "execute_command": "{{.FacterVars}}{{if .Sudo}} echo 'vagrant' | sudo -E -S {{end}} puppet apply --verbose --modulepath='{{.ModulePath}}' {{if ne .HieraConfigPath \"\"}}--hiera_config='{{.HieraConfigPath}}' {{end}} {{if ne .ManifestDir \"\"}}--manifestdir='{{.ManifestDir}}' {{end}} --detailed-exitcodes {{.ManifestFile}}",
+      "manifest_file": "puppet/manifests/vagrant.pp",
+      "manifest_dir": "puppet/manifests",
+      "module_paths": [
+        "puppet/modules"
+      ] 
+    }
+  ],
+ "post-processors": [
+   {
+     "type": "vagrant-vmware-ovf",
+     "compression_level": 9,
+     "output": "{{.BuildName}}-{{.Provider}}-{{user `version`}}.box"
+   }
+ ]
+}
