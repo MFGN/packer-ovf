@@ -1,7 +1,8 @@
-#!/bin/sh
+#!/bin/bash
  
 ## install software for the base box to come packaged with - these will always be updated with chef/pupput
-apt-get install -y build-essential dkms rubygems lxc-docker zlib1g-dev libssl-dev libreadline6-dev libyaml-dev ruby1.8 curl wget git-core gcc g++ make autoconf python-software-properties screen openssl-server python-simplejson
+apt-get update
+apt-get install -y linux-headers-$(uname -r) build-essential dkms zlib1g-dev libssl-dev libreadline6-dev libyaml-dev curl wget git-core gcc g++ make autoconf python-software-properties screen python-simplejson
  
  
 ## create the vagrant user
@@ -16,11 +17,11 @@ echo '%admin ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
 echo 'UseDNS no' >> /etc/ssh/sshd_config
  
 ## install the vagrant public & private keys
-mkdir /home/vagrant/.ssh/
+mkdir /home/vagrant/.ssh
 cd /home/vagrant/.ssh
 wget http://github.com/mitchellh/vagrant/raw/master/keys/vagrant
 wget http://github.com/mitchellh/vagrant/raw/master/keys/vagrant.pub
 mv vagrant.pub /home/vagrant/.ssh/authorized_keys
 chmod 700 /home/vagrant/.ssh
 chmod 600 /home/vagrant/.ssh/authorized_keys
-chown -R vagrant:vagrant /home/vagrant
+chown -R vagrant:vagrant /home/vagrant/.ssh
