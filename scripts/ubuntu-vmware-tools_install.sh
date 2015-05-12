@@ -1,4 +1,5 @@
 #!/bin/bash
+apt-get -y install build-essential make gcc linux-headers-$(uname -r)
  
 sudo mount -o loop ~/linux.iso /media/cdrom
 sudo cp /media/cdrom/VMwareTools*.tar.gz ~/
