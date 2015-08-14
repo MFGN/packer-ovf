@@ -1,6 +1,6 @@
 {
   "variables": {
-    "version": "3"
+    "version": "2"
   },
   "builders": [
     {
@@ -192,8 +192,8 @@
   ],
   "post-processors": [
     {
-      "type": "vagrant-vmware-ovf",
-      "compression_level": 0,
+      "type": "vagrant",
+      "compression_level": 2,
       "output": "{{.BuildName}}-{{.Provider}}-{{user `version`}}.box"
     }
   ]
