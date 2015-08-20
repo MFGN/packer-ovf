@@ -96,6 +96,7 @@
         "memsize": "512",
         "numvcpus": "2",
 		"scsi0.virtualDev": "pvscsi",
+		"ethernet0.virtualDev": "vmxnet3"
       },
       "type": "vmware-iso",
       "headless": true,
@@ -115,7 +116,7 @@
 	  "http_port_max" : 8080,
       "tools_upload_flavor": "linux",
       "boot_command": [
-        "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/scripts/ks.cfg<enter><wait>"
+        "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/scripts/centos-7-kickstart.cfg<enter><wait>"
       ]
     }
   ],
